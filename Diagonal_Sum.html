@@ -1,0 +1,25 @@
+<script>
+  rows = +prompt("enter rows :");
+  cols = +prompt("enter cols :");
+  mat = [];
+  for (i = 0; i < rows; i++) {
+    temp = [];
+    for (j = 0; j < cols; j++) {
+      ele = prompt("enter " + i + "" + j + " element :");
+      temp.push(ele);
+    }
+    mat.push(temp);
+  }
+  console.log(mat);
+  sum = 0;
+  for (j = 0; j < cols; j++) {
+    //console.log(mat[0][j])
+    //console.log(mat[rows-1][j])
+    sum += Number(mat[0][j]) + Number(mat[rows - 1][j]);
+  }
+  for (i = 1; i < cols - 1; i++) {
+    //console.log(mat[i][cols-1])
+    sum += Number(mat[i][0]) + Number(mat[i][cols - 1]);
+  }
+  alert(sum);
+</script>
